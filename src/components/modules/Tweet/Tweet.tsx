@@ -38,6 +38,7 @@ const Tweet: StatelessComponent<ITweetProps> = ({
                 className={styles.image}
                 src={tweet.metadata.image}
                 onError={handleImageError}
+                alt="TODO: Description Here"
               />
             )}
           </div>
