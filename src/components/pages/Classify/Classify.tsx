@@ -20,6 +20,16 @@ const Classify: StatelessComponent<IClassifyProps> = ({
   const [hasImageError, setHasImageError] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
+  const handleOutrageClick = () => {
+    console.log("CLASSIFIED AS OUTRAGEOUS");
+    handleButtonClick();
+  };
+
+  const handleNonOutrageClick = () => {
+    console.log("CLASSIFIED AS NON-OUTRAGEOUS");
+    handleButtonClick();
+  };
+
   const handleButtonClick = () => {
     if (sectionRef.current) {
       sectionRef.current.focus();
@@ -52,8 +62,8 @@ const Classify: StatelessComponent<IClassifyProps> = ({
               </p>
             ) : (
               <>
-                <Button text="😒 Not outrageous" onClick={handleButtonClick} />
-                <Button text="😾 Outrageous! 😡" onClick={handleButtonClick} />
+                <Button text="😒 Not outrageous" onClick={handleNonOutrageClick} />
+                <Button text="😾 Outrageous! 😡" onClick={handleOutrageClick} />
               </>
             )}
           </div>
