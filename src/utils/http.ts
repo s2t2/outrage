@@ -1,4 +1,4 @@
-import tweets from '../data/tweets';
+import tweets from '../data/test_tweets'; // '../data/tweets';
 import { Tweet } from '../components/App/App';
 
 const get = () => null;
