@@ -48,3 +48,10 @@
 ### Firebase Hosting
 
   + https://firebase.google.com/docs/hosting/
+
+## Big Query
+
+  + https://cloud.google.com/bigquery/docs/exporting-data
+  + https://github.com/googleapis/nodejs-bigquery
+  + https://github.com/googleapis/nodejs-bigquery/blob/master/samples/browseRows.js
+  + https://github.com/googleapis/nodejs-bigquery/blob/master/samples/clientJSONCredentials.js

@@ -24,4 +24,22 @@ npm install typescript -g # first time only, to install "tsc" CLI
 tsc src/utils/fire.ts && node src/utils/fire.js
 ```
 
-## Setup Big Query
+## Setup BigQuery
+
+Enable the BigQuery API from the Google APIs console.
+
+Navigate to BigQuery console, and click on the "outrage-classifications" project name at the bottom left to reveal a place where you can "Create a dataset" named "outrage_development", "outrage_staging", "outrage_production", etc.
+
+Inside the dataset, create a new table called "classifications" with the following schema: "tweet_uuid" (string, required), "username" (string, required), "outrage" (boolean, required), "classified_at" (timestamp, nullable).
+
+Install the package:
+
+```sh
+npm install --save @google-cloud/bigquery
+```
+
+Run the script for testing purposes:
+
+```sh
+tsc src/utils/bq.ts && node src/utils/bq.js
+```

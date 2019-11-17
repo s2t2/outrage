@@ -27,3 +27,5 @@ yarn-error.log*
 
 
 src/utils/fire.js
+src/utils/bq.js
+src/utils/*.js
