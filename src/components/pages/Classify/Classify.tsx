@@ -27,14 +27,18 @@ const Classify: StatelessComponent<IClassifyProps> = ({
   //}
 
   const classifyTweet = (tweet:TweetType, outrage:boolean) => {
-    console.log("CLASSIFYING TWEET:", outrage, tweet);
-    console.log("TODO: POST REQUEST")
+    const username = "user123"; // TODO: capture at beginning of classification flow when all tweets are first loaded, then pass in as props / state
+    console.log("CLASSIFYING TWEET:", username, outrage, tweet);
+
+    console.log("TODO: POST REQUEST TO BIG QUERY")
+
+
   };
 
   const handleOutrageClick = () => {
     if(tweets && currentTweet < tweets.length){
-      const tweet = tweets[currentTweet]; // consider declaring this higher up the component tree and passing it in!
       console.log("CLASSIFIED AS OUTRAGEOUS");
+      const tweet = tweets[currentTweet]; // consider declaring this higher up the component tree and passing it in!
       classifyTweet(tweet, true);
       refreshTweet();
     }; // todo: refactor by passing tweet in as props / state
@@ -42,8 +46,8 @@ const Classify: StatelessComponent<IClassifyProps> = ({
 
   const handleNonOutrageClick = () => {
     if(tweets && currentTweet < tweets.length){
-      const tweet = tweets[currentTweet]; // consider declaring this higher up the component tree and passing it in!
       console.log("CLASSIFIED AS NON-OUTRAGEOUS");
+      const tweet = tweets[currentTweet]; // consider declaring this higher up the component tree and passing it in!
       classifyTweet(tweet, false);
       refreshTweet();
     }; // todo: refactor by passing tweet in as props / state
