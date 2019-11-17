@@ -20,17 +20,36 @@ const Classify: StatelessComponent<IClassifyProps> = ({
   const [hasImageError, setHasImageError] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
+  console.log("(RE-)LOADING 'CLASSIFY' COMPONENT")
+
+  //if(tweets && currentTweet < tweets.length){
+  //  const tweet = tweets[currentTweet]; // consider declaring this higher up the component tree and passing it in!
+  //}
+
+  const classifyTweet = (tweet:TweetType, outrage:boolean) => {
+    console.log("CLASSIFYING TWEET:", outrage, tweet);
+    console.log("TODO: POST REQUEST")
+  };
+
   const handleOutrageClick = () => {
-    console.log("CLASSIFIED AS OUTRAGEOUS");
-    handleButtonClick();
+    if(tweets && currentTweet < tweets.length){
+      const tweet = tweets[currentTweet]; // consider declaring this higher up the component tree and passing it in!
+      console.log("CLASSIFIED AS OUTRAGEOUS");
+      classifyTweet(tweet, true);
+      refreshTweet();
+    }; // todo: refactor by passing tweet in as props / state
   };
 
   const handleNonOutrageClick = () => {
-    console.log("CLASSIFIED AS NON-OUTRAGEOUS");
-    handleButtonClick();
+    if(tweets && currentTweet < tweets.length){
+      const tweet = tweets[currentTweet]; // consider declaring this higher up the component tree and passing it in!
+      console.log("CLASSIFIED AS NON-OUTRAGEOUS");
+      classifyTweet(tweet, false);
+      refreshTweet();
+    }; // todo: refactor by passing tweet in as props / state
   };
 
-  const handleButtonClick = () => {
+  const refreshTweet = () => {
     if (sectionRef.current) {
       sectionRef.current.focus();
     }
@@ -46,6 +65,7 @@ const Classify: StatelessComponent<IClassifyProps> = ({
     <section className={styles.section} ref={sectionRef} tabIndex={-1}>
       <h2>Help AI learn how to detect outrage</h2>
       <h3>Is the following social media message expressing moral outrage?</h3>
+
       {tweets && currentTweet < tweets.length ? (
         <>
           <Tweet
@@ -58,7 +78,7 @@ const Classify: StatelessComponent<IClassifyProps> = ({
               <p className={styles.error}>
                 This tweet does not appear to have loaded properly, please skip
                 it.
-                <Button text="Skip tweet" onClick={handleButtonClick} />
+                <Button text="Skip tweet" onClick={refreshTweet} />
               </p>
             ) : (
               <>
@@ -68,9 +88,10 @@ const Classify: StatelessComponent<IClassifyProps> = ({
             )}
           </div>
         </>
-      ) : tweets ? (
+      ) : (
         <p>load more tweets</p>
-      ) : null}
+      )}
+
     </section>
   );
 };
