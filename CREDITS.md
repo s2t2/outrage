@@ -38,6 +38,8 @@
   + [`firebase.firestore.CollectionReference`](https://firebase.google.com/docs/reference/js/firebase.firestore.CollectionReference)
   + [`firebase.firestore.DocumentReference`](https://firebase.google.com/docs/reference/js/firebase.firestore.DocumentReference)
   + [`firebase.firestore.DocumentSnapshot`](https://firebase.google.com/docs/reference/js/firebase.firestore.DocumentSnapshot)
+  + https://firebase.google.com/docs/firestore/quickstart
+  + https://firebase.google.com/docs/firestore/data-model
 
 ### Google APIs
 
