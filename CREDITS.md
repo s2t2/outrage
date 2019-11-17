@@ -55,3 +55,6 @@
   + https://github.com/googleapis/nodejs-bigquery
   + https://github.com/googleapis/nodejs-bigquery/blob/master/samples/browseRows.js
   + https://github.com/googleapis/nodejs-bigquery/blob/master/samples/clientJSONCredentials.js
+  + https://googleapis.dev/nodejs/bigquery/latest/index.html
+  + https://googleapis.dev/nodejs/bigquery/latest/BigQuery.html
+  + https://googleapis.dev/nodejs/bigquery/latest/Table.html
